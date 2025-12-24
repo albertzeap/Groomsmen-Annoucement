@@ -22,7 +22,7 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
     const formData = new FormData(e.currentTarget);
     const firstName = formData.get("firstName") as string;
     const lastName = formData.get("lastName") as string;
-    const fullName = `${firstName} ${lastName}`.toLowerCase();
+    const fullName = `${firstName.trim()} ${lastName.trim()}`.toLowerCase();
     // Check if the full name exists as a key in the map
     if (groomsmen.has(fullName)) {
       onAuthenticated();
