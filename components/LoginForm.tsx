@@ -53,7 +53,7 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
       className="flex flex-col items-center gap-4 w-full max-w-md mx-auto"
       onSubmit={handleSubmit}
     >
-      <div className="h-8 my-2 w-full">
+      <div className="h-6 m-2 w-full">
         {error && <ErrorMessage message={error} />}
       </div>
       <Field className="w-full m-1">
