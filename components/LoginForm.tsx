@@ -18,11 +18,12 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError("");
     // Get the form data so that we can pull the values from it
     const formData = new FormData(e.currentTarget);
     const firstName = formData.get("firstName") as string;
     const lastName = formData.get("lastName") as string;
-    const fullName = `${firstName.trim()} ${lastName.trim()}`.toLowerCase();
+    const fullName = `${firstName.trim()} ${lastName.trim()}`;
     // Check if the full name exists as a key in the map
     if (groomsmen.has(fullName)) {
       onAuthenticated();
@@ -30,7 +31,7 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
       e.currentTarget.reset();
       console.log("Authenticated");
     } else {
-      setError("Seems like we don't know you.");
+      setError("Seems like we don't know you. Are you a spy?");
       setTimeout(() => setError(""), 3000);
     }
   };
@@ -52,25 +53,20 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
       className="flex flex-col items-center gap-4 w-full max-w-md mx-auto"
       onSubmit={handleSubmit}
     >
-      <div className="h-10 mb-4 w-full">
+      <div className="h-8 my-2 w-full">
         {error && <ErrorMessage message={error} />}
       </div>
-      <Field className="w-full">
+      <Field className="w-full m-1">
         <FieldLabel htmlFor="firstName">First Name</FieldLabel>
-        <Input
-          id="firstName"
-          name="firstName"
-          type="text"
-          placeholder="Albert"
-        />
+        <Input id="firstName" name="firstName" type="text" placeholder="Babu" />
       </Field>
-      <Field className="w-full">
+      <Field className="w-full m-1">
         <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
-        <Input id="lastName" name="lastName" type="text" placeholder="Paez" />
-        <Button type="submit" variant="ghost">
-          Submit
-        </Button>
+        <Input id="lastName" name="lastName" type="text" placeholder="Frik" />
       </Field>
+      <Button className="my-2 w-full" type="submit" variant="default">
+        View Mission
+      </Button>
     </form>
   );
 }

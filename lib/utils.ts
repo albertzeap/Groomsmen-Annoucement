@@ -18,7 +18,7 @@ export function convertEnvToGroomsman() {
     let firstName = nameParts[0];
     let lastName = nameParts[1];
     let groomsman = { firstName: firstName, lastName: lastName };
-    groomsmen.set(name.toLowerCase(), groomsman);
+    groomsmen.set(name, groomsman);
   });
 
   return groomsmen;
