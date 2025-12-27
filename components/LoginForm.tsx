@@ -58,11 +58,23 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
       </div>
       <Field className="w-full m-1">
         <FieldLabel htmlFor="firstName">First Name</FieldLabel>
-        <Input id="firstName" name="firstName" type="text" placeholder="Babu" />
+        <Input
+          className="text-base"
+          id="firstName"
+          name="firstName"
+          type="text"
+          placeholder="Babu"
+        />
       </Field>
       <Field className="w-full m-1">
         <FieldLabel htmlFor="lastName">Last Name</FieldLabel>
-        <Input id="lastName" name="lastName" type="text" placeholder="Frik" />
+        <Input
+          className="text-base"
+          id="lastName"
+          name="lastName"
+          type="text"
+          placeholder="Frik"
+        />
       </Field>
       <Button className="my-2 w-full" type="submit" variant="default">
         View Mission
