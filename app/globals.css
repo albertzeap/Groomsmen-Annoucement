@@ -45,6 +45,22 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+
+  /* Keep dark backgrounds */
+  --color-spy-navy: #0a1929;
+  --color-spy-charcoal: #1a1a2e;
+
+  /* Soft pastel accents - muted but still visible on dark */
+  --color-spy-orange: #ffb088; /* Soft peachy coral */
+  --color-spy-teal: #7dd3c0; /* Muted seafoam teal */
+  --color-spy-yellow: #f9d89c; /* Soft butter yellow */
+  --color-spy-pink: #f4a6b8; /* Dusty rose pink */
+  --color-spy-lavender: #c7b3e5; /* Soft lavender */
+  --color-spy-mint: #b4e7ce; /* Pale mint green */
+  --color-cream: #fff5e6; /* Warm cream for text */
+
+  --font-spy: ui-sans-serif, system-ui, sans-serif;
+  --font-mission: "Courier New", Courier, monospace;
 }
 
 :root {
@@ -124,4 +140,3 @@
     @apply bg-background text-foreground;
   }
 }
-

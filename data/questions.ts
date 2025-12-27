@@ -56,19 +56,23 @@ export const questions: Question[] = [
   {
     id: "3",
     title: "Preparation Check",
-    titleDescription: "Scenario:  ",
+    titleDescription:
+      "Scenario: You are about to be tasked with a mission that requires love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self control. How do you feel?   ",
     choices: [
       {
         id: "A",
-        choice:
-          "He was the humblest person I know. Loved the Lord and loved being goofy",
+        choice: "I was born ready",
       },
-      { id: "B", choice: "He had some weirdly shaped thumbs" },
+      {
+        id: "B",
+        choice: "I have like one of those traits. I think that's good enough",
+      },
       {
         id: "C",
-        choice: "He was like super duper in love with that Ritz gurl",
+        choice:
+          "I still don't know what's going on but I'll just pick this answer.",
       },
-      { id: "D", choice: "I think I was invited to his wedding?" },
+      { id: "D", choice: "It's just game why you haf to be nervous?" },
     ],
   },
 ];

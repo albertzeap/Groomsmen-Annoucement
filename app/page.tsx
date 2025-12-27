@@ -1,42 +1,61 @@
 "use client";
 import { useState, useEffect } from "react";
-import { LoginForm } from "@/components/LoginForm";
 import { Announcement } from "@/components/Announcement";
-import { Quiz } from "@/components/Quiz";
 import { Button } from "@/components/ui/button";
-import { FieldChoiceCard } from "@/components/FieldChoiceCard";
-
-const loginTitle = "An Important Question...";
-const loginDescription =
-  "You've been considered for a top secret mission involving good times, praying when neccessary, Friday night dancing, and so much more. But first, who are you? Fill out the fields below and then we can keep talking.";
+import { useRouter } from "next/navigation";
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export default function Page() {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [authenticatedUser, setAuthenticatedUser] = useState("");
 
   useEffect(() => {
     const user = sessionStorage.getItem("authenticatedUser");
+    console.log(user);
     if (user) {
       setAuthenticatedUser(user);
+    } else {
+      router.push("/login");
     }
   });
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen m-3">
-      {isAuthenticated ? (
-        <>
-          <Announcement
-            title="Top-Secret Evaluation"
-            description={`Welcome to the evaluation, ${authenticatedUser}`}
-          />
-          <Quiz />
-          <Button onClick={() => setIsAuthenticated(false)}>Reset</Button>
-        </>
-      ) : (
-        <>
-          <Announcement title={loginTitle} description={loginDescription} />
-          <LoginForm onAuthenticated={() => setIsAuthenticated(true)} />
-        </>
-      )}
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <Card className="w-full max-w-sm text-center">
+        <CardHeader>
+          <CardTitle>
+            <Announcement
+              title="Top-Secret Evaluation"
+              description={`Welcome to the evaluation, ${authenticatedUser}`}
+            />
+          </CardTitle>
+          <CardDescription>
+            You've been considered for a very special position within the life
+            of Albert Paez. The following evaluation will take you through a
+            series of scenarios which will test your competence for this role.
+          </CardDescription>
+          <CardFooter className="flex flex-col items-center justify-center">
+            <Button onClick={() => router.push("/evaluation")}>
+              Let's do this!
+            </Button>
+          </CardFooter>
+        </CardHeader>
+      </Card>
+      <Button
+        onClick={() => {
+          setIsAuthenticated(false);
+        }}
+      >
+        Reset
+      </Button>
     </div>
   );
 }
