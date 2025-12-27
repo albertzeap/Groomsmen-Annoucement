@@ -40,7 +40,7 @@ export default function EvaluatingPage() {
     };
   }, []);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Loader message={messages[currentMessage]} />
     </div>
   );

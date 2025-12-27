@@ -38,7 +38,7 @@ function Quiz() {
 
   return (
     <>
-      <Card className="w-full max-w-lg flex flex-col justify-center items-center m-4">
+      <Card className="w-full max-w-lg flex flex-col justify-center items-center m-4 shadow-md p-4">
         <FieldChoiceCard
           key={questions.at(questionNum)?.id}
           title={questions.at(questionNum)?.title}

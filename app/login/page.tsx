@@ -17,7 +17,7 @@ export default function Page() {
   }, [isAuthenticated]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Announcement title={loginTitle} description={loginDescription} />
       <div className="w-full max-w-sm mx-auto">
         <img
