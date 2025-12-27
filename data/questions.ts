@@ -36,7 +36,7 @@ export const questions: Question[] = [
   },
   {
     id: "2",
-    title: "Knowledge Check",
+    title: "Knowledge Check 🧠",
     titleDescription:
       "Scenario: You are a world-renowed spy and are tasked with infiltrating the life of Albert Paez. After years of studying the weird specimen named Albert Paez, you are tasked with writing a report. What do you write about him? ",
     choices: [
@@ -55,7 +55,7 @@ export const questions: Question[] = [
   },
   {
     id: "3",
-    title: "Preparation Check",
+    title: "Preparation Check 💪",
     titleDescription:
       "Scenario: You are about to be tasked with a mission that requires love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self control. How do you feel?   ",
     choices: [

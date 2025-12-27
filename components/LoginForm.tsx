@@ -76,7 +76,11 @@ function LoginForm({ onAuthenticated }: LoginFormProps) {
           placeholder="Frik"
         />
       </Field>
-      <Button className="my-2 w-full" type="submit" variant="default">
+      <Button
+        className="my-2 w-full hover:bg-black active:bg-black"
+        type="submit"
+        variant="default"
+      >
         View Mission
       </Button>
     </form>

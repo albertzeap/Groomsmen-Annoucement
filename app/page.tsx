@@ -32,7 +32,7 @@ export default function Page() {
           <CardHeader>
             <CardTitle>
               <Announcement
-                title="Top-Secret Evaluation"
+                title="TOP-SECRET EVALUATION"
                 description={`Welcome to the evaluation, ${authenticatedUser}`}
               />
             </CardTitle>
@@ -51,7 +51,10 @@ export default function Page() {
               series of scenarios which will test your competence for this role.
             </CardDescription>
             <CardFooter className="flex flex-col items-center justify-center">
-              <Button onClick={() => router.push("/evaluation")}>
+              <Button
+                className="hover:bg-black active:bg-black"
+                onClick={() => router.push("/evaluation")}
+              >
                 Let's do this!
               </Button>
             </CardFooter>

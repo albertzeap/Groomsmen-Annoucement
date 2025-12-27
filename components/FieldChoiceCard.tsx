@@ -24,15 +24,7 @@ export function FieldChoiceCard({ title, titleDescription, choices }: Props) {
           <FieldDescription className="text-md">
             {titleDescription}
           </FieldDescription>
-          {/* <FieldContent className="w-full max-w-sm mx-auto py-2"> */}
-          {/*   <img */}
-          {/*     src="/unicorn-detective.png" */}
-          {/*     alt="Retro Folder" */}
-          {/*     title="Picture of Retro-Themed Folder Mascot" */}
-          {/*     className="relative z-20 aspect-square w-full object-cover" */}
-          {/*   /> */}
-          {/* </FieldContent> */}
-          <RadioGroup>
+          <RadioGroup className="shadow-sm">
             {choices?.map((choice) => (
               <FieldLabel key={choice.id}>
                 <Field orientation="horizontal">

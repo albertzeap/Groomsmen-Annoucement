@@ -1,18 +1,11 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { ArrowLeft01Icon, ArrowRight01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { Card, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { FieldChoiceCard } from "@/components/FieldChoiceCard";
-import { Loader } from "@/components/Loader";
 import { Progress } from "@/components/ui/progress";
 import { questions } from "@/data/questions";
 
@@ -45,12 +38,22 @@ function Quiz() {
           titleDescription={questions.at(questionNum)?.titleDescription}
           choices={questions.at(questionNum)?.choices}
         />
-        <CardFooter className="flex justify-center items-center w-full">
-          <Button variant="default" onClick={handleBackButton}>
+        <CardFooter className="flex justify-center items-center w-full gap-4">
+          <Button
+            className="active:bg-black hover:bg-black"
+            variant="default"
+            onClick={handleBackButton}
+          >
+            <HugeiconsIcon icon={ArrowLeft01Icon} className="h-4 w-4 mr-2" />
             Back
           </Button>
-          <Button variant="default" onClick={handleNextButton}>
+          <Button
+            className="active:bg-black hover:bg-black"
+            variant="default"
+            onClick={handleNextButton}
+          >
             {questionNum < questions.length - 1 ? "Next" : "Submit"}
+            <HugeiconsIcon icon={ArrowRight01Icon} className="h-4 w-4 ml-2" />
           </Button>
         </CardFooter>
         <Progress value={(100 / questions.length) * (questionNum + 1)} />
