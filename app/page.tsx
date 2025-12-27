@@ -37,6 +37,15 @@ export default function Page() {
               description={`Welcome to the evaluation, ${authenticatedUser}`}
             />
           </CardTitle>
+
+          <CardContent>
+            <img
+              src="/retro-folder.png"
+              alt="Retro Folder"
+              title="Picture of Retro-Themed Folder Mascot"
+              className="relative z-20 aspect-square w-full object-cover "
+            />
+          </CardContent>
           <CardDescription>
             You've been considered for a very special position within the life
             of Albert Paez. The following evaluation will take you through a
@@ -49,13 +58,6 @@ export default function Page() {
           </CardFooter>
         </CardHeader>
       </Card>
-      <Button
-        onClick={() => {
-          setIsAuthenticated(false);
-        }}
-      >
-        Reset
-      </Button>
     </div>
   );
 }

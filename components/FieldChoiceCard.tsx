@@ -7,7 +7,6 @@ import {
   FieldSet,
   FieldTitle,
 } from "@/components/ui/field";
-import { Card } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 type Props = {
@@ -21,17 +20,33 @@ export function FieldChoiceCard({ title, titleDescription, choices }: Props) {
     <div className="w-full max-w-md m-2">
       <FieldGroup>
         <FieldSet>
-          <FieldLabel htmlFor="compute-environment-p8w">{title}</FieldLabel>
-          <FieldDescription>{titleDescription}</FieldDescription>
-          <RadioGroup defaultValue="kubernetes">
-            {choices.map((choice) => (
+          <FieldLabel className="text-lg">{title}</FieldLabel>
+          <FieldDescription className="text-md">
+            {titleDescription}
+          </FieldDescription>
+          {/* <FieldContent className="w-full max-w-sm mx-auto py-2"> */}
+          {/*   <img */}
+          {/*     src="/unicorn-detective.png" */}
+          {/*     alt="Retro Folder" */}
+          {/*     title="Picture of Retro-Themed Folder Mascot" */}
+          {/*     className="relative z-20 aspect-square w-full object-cover" */}
+          {/*   /> */}
+          {/* </FieldContent> */}
+          <RadioGroup>
+            {choices?.map((choice) => (
               <FieldLabel key={choice.id}>
                 <Field orientation="horizontal">
-                  <FieldContent>
-                    <FieldTitle>{choice.id}</FieldTitle>
+                  <FieldContent className="p-1">
+                    <FieldTitle className="text-md font-bold py-2">
+                      {choice.id}
+                    </FieldTitle>
                     <FieldDescription>{choice.choice}</FieldDescription>
                   </FieldContent>
-                  <RadioGroupItem value={choice.choice} id={choice.id} />
+                  <RadioGroupItem
+                    className="w-5 h-5"
+                    value={choice.choice}
+                    id={choice.id}
+                  />
                 </Field>
               </FieldLabel>
             ))}
