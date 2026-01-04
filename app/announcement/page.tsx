@@ -65,7 +65,9 @@ export default function AnnouncementPage() {
               </p>
 
               <p className="text-4xl font-extrabold space-y-4 ">
-                🎉 GROOMSMAN 🎉
+                {authenticatedUser == process.env.NEXT_PUBLIC_BEST_MAN
+                  ? "🎉 BEST MAN 🎉"
+                  : "🎉 GROOMSMAN 🎉"}
               </p>
 
               <p className="text-sm text-muted-foreground">
